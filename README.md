@@ -157,11 +157,12 @@ _________
       ```
       - Internal => we should use styling within a head tag then it consists of style tag
       - ex:
+      ```sample example for Internal css```
       ```html
       <!DOCTYPE html>
       <html>
       <head>
-          <title>Student Details</title>
+          <title>Sample example for internal css</title>
           <style type="text/css">
           h1
           {
@@ -212,20 +213,19 @@ _________
 			<h2>welcome user </h2>
 			</body>
 		</html>
-       ```
-	
+        ```
    - 4.Similar way we are accessing javascript also
    - 5.Navigation from url => views => template => views => templates
-     - We need to create a url path and then views
-     - ex:
-       ```urls.py```
-       ```python
-       path('shr/',views.stu),
-       ```
-     - Before going to view just we need to create a form to submit the data to views
-     - ex:
-       ```registration.html```
-       ```html
+      - We need to create a url path and then views
+      - ex:
+        ```urls.py```
+        ```python
+        path('shr/',views.stu),
+        ```
+      - Before going to view just we need to create a form to submit the data to views
+      - ex:
+        ```registration.html```
+        ```html
 		{% load static %}
 		<!DOCTYPE html>
 		<html>
@@ -247,13 +247,13 @@ _________
 			</form>
 		</body>
 		</html>
-       ```
-     - In registration page we can observe forms tag in that we are passing the content from .html to views automatically when a button is clicked with method as POST 
-     - For submitting the data to views we need to provide security for data so we are using ```{% csrf_token %}``` 
-     - We need to create a function in views.py so the function name is stu
-     - ex:
-       ```views.py```
-       ```python
+        ```
+      - In registration page we can observe forms tag in that we are passing the content from .html to views automatically when a button is clicked with method as POST 
+      - For submitting the data to views we need to provide security for data so we are using ```{% csrf_token %}``` 
+      - We need to create a function in views.py so the function name is stu
+      - ex:
+        ```views.py```
+        ```python
 	    def stu(request):
 		if request.method == "POST":
 			u = request.POST['uname']
@@ -262,12 +262,12 @@ _________
 			d = {'us':u,.......}
 			return render(request,'myApp/display.html',d) 
 		return render(request,'myApp/registration.html')
-       ```
-     - So in views the data can be accessed from forms ie., .html with names so that names should be accessed in views.py 
-     - The accessed data is formatted in the form of dictionary format with key and value pairs so just we are passing all the data in dictionary format to .html file
-     - ex:
-       ```display.html```
-       ```html
+        ```
+      - So in views the data can be accessed from forms ie., .html with names so that names should be accessed in views.py 
+      - The accessed data is formatted in the form of dictionary format with key and value pairs so just we are passing all the data in dictionary format to .html file
+      - ex:
+        ```display.html```
+        ```html
 		{% load static %}
 		<!DOCTYPE html>
 		<html>
@@ -280,5 +280,5 @@ _________
 		//no of passed data from views that is gathered from .html
 		</body>
 		</html>
-       ```
-     - Here we need to access the data from views so here we need to access only key that should be in DTL language
+        ```
+      - Here we need to access the data from views so here we need to access only key that should be in DTL language
