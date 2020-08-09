@@ -112,3 +112,86 @@ _________
       def roll(request,t,na):
           return HttpResponse("Your roll number is: {}\n Your name is: {}".format(t,na))
       ```
+_________
+### Day-5(07-08-2020)
+#### Day-5 content:
+_________
+  - 1.How to create Templates folder and ahow to access the files in templates folder
+  - 2.Templates folder is created in inner of app in that we are saving all out .html files
+  - 3.Useage of render method
+     - ex:
+     ```views.py```
+     ```python
+     def stu(request):
+        //statements
+        return render('httprequest','path of .html file',{'key':value})
+    ```
+  - 4.How to access the values from views to .html files
+  ```html files```
+  ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+  	  <title>Display Data</title>
+    </head>
+    <body>
+      <h1>Your Username is: {{us}} </h1>
+      <h3>Your email is: {{em}} </h3>
+    </body>
+    </html>
+   ```
+   ```
+   DTL => Django Template Language
+	  views => .html [DTL]
+	  .html => hyperlink -> [DTL]
+	{{variabename}}
+	{% url '' %}
+	{% for i in k %}
+	{% endfor %}
+  ```
+   - 5.Brief Description of CSS with selectors like(id,tagnames,class etc.,)
+      - Inline => we should use styling within a tag
+      - ex:
+      ```html
+        <h1 style="background-color:green;color:blue">Hi Welcome</h1>
+      ```
+      - Internal => we should use styling within a head tag then it consists of style tag
+      - ex:
+      ```html
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <title>Student Details</title>
+          <style type="text/css">
+          h1
+          {
+              background-color: black;
+              color: white;
+              margin-right: 30%;
+              margin-left: 30%;
+              padding:9px;
+              margin-top:1px;
+          }
+          </style>
+       </head>
+       ```
+_________
+### Day-6(08-08-2020)
+#### Day-6 content:
+_________
+
+   - 1.Useage of External Css
+    - Creating static folder in our app to access all files like .css,.js, images etc.,
+   - 2.Accessing external css file that is tored in static folder
+      - ex: 
+        appname/static/css => here css is defining to access only .css files similarly .js and images etc.
+        
+        ```sample.css```
+        ```css
+        h2
+        {
+          background-color: cadetblue;
+          color: white;
+        }
+        ```
+   
