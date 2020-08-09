@@ -1,0 +1,20 @@
+form
+{
+	margin-top: 150px;
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: cadetblue;
+    padding: 30px;
+}
+label
+{
+	padding: 8px;
+	font-size: 20px;
+}
+
+input
+{
+	background-color: black;
+	color: white ;
+	padding: 8px;
+}
