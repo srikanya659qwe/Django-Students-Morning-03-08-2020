@@ -155,7 +155,7 @@ _________
       ```html
         <h1 style="background-color:green;color:blue">Hi Welcome</h1>
       ```
-      - Internal => we should use styling within a head tag then it consists of style tag
+      - Internal => we should use styling within a head tag for that we need to use style tag inner of head tag
       - ex:
       ```sample example for Internal css```
       ```html
@@ -184,10 +184,9 @@ _________
 
    - 1.Useage of External Css
     - Creating static folder in our app to access all files like .css,.js, images etc.,
-   - 2.Accessing external css file that is tored in static folder
+   - 2.Accessing external css file that should be saved in static/css folder
       - ex: 
-        appname/static/css => here css is defining to access only .css files similarly .js and images etc.
-        
+        appname/static/css => here css is defining to access only .css files similarly .js and images etc.  
         ```sample.css```
         ```css
         h2
