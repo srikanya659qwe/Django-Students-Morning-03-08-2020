@@ -281,4 +281,4 @@ _________
 		</body>
 		</html>
         ```
-      - Here we need to access the data from views so here we need to access only key that should be in DTL language
+      - Here we need to access the data from views for that we need to use only key that should be in DTL language format to print the output in .html file
