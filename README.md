@@ -281,3 +281,24 @@ _________
 		</html>
         ```
       - Here we need to access the data from views for that we need to use only key that should be in DTL language format to print the output in .html file
+      
+_________
+### Day-7(10-08-2020)
+#### Day-7 content:
+_________
+      - 1.Created another project to implement bootstrap tags and styling to it
+      - 2.Bootstrap brief explanation, configuring in django project styling for it by uisng css and js
+      - 3.Creation of user urls in userapp for creating the path within the app instead of admin urls
+      - 4.For creating userapp urls we need to import some statements in admin app i.e., ```include()```
+      	- ex:
+	```admin app urls.py```
+	```python
+	from django.urls import path,include
+	```
+      - 5.To include the method we need to set a particular userapp so we need to set it first
+        - ex:
+	```admin urls.py```
+	```python
+	path('',include('userappname.urls')),
+	```
+      - 6.
