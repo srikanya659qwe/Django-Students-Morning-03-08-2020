@@ -286,24 +286,24 @@ _________
 ### Day-7(10-08-2020)
 #### Day-7 content:
 _________
-     - 1.Created another project to implement bootstrap tags and styling to it
-     - 2.Bootstrap brief explanation, configuring in django project styling for it by uisng css and js
-     - 3.Creation of user urls in userapp for creating the path within the app instead of admin urls
-     - 4.For creating userapp urls we need to import some statements in admin app i.e., ```include()```
+   - 1.Created another project to implement bootstrap tags and styling to it
+   - 2.Bootstrap brief explanation, configuring in django project styling for it by uisng css and js
+   - 3.Creation of user urls in userapp for creating the path within the app instead of admin urls
+   - 4.For creating userapp urls we need to import some statements in admin app i.e., ```include()```
       - ex:
       ```admin app urls.py```
       ```python
-	from django.urls import path,include
+	 from django.urls import path,include
       ```
-     - 5.To include the method we need to set a particular userapp so we need to configure it first
+   - 5.To include the method we need to set a particular userapp so we need to configure it first
       - ex:
       ```admin urls.py```
       ```python
-	path('',include('userappname.urls')),
+	 path('',include('userappname.urls')),
       ```
-     - 6.Then in userapp we can create our own urls path 
-     - 7.Here we are just creating our own path and functions in views.py so just we are navigating to our .html files
-     - 8.While navigating to .html here it self jusdt we are using dtl language to split scripts,navigation and body content in seperate files
+   - 6.Then in userapp we can create our own urls path 
+   - 7.Here we are just creating our own path and functions in views.py so just we are navigating to our .html files
+   - 8.While navigating to .html here it self jusdt we are using dtl language to split scripts,navigation and body content in seperate files
       - Just we are creating scripts in header.html
       - ex:
       ```header.html```
@@ -333,4 +333,66 @@ _________
       all those navbar for all pages so we had implemented in header.html file
       - To display the contents in body of each page so we are using dtl language ```{% block content %}{% endblock content %}``` within this we need to display all the 
       content of particular file
-     - 10.
+   - 9.Sample of navbar.html so here we need to use url namses to access the particualr path location to navigate so it performs some action that is written in views.py
+     - ex:
+     ```navbar.html```
+     ```html
+		{% load static %}
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<a class="navbar-brand" href="#"><img src="{% static 'images/first.jpg' %}" alt="logo" style="width:40px;"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+		<li class="nav-item">
+		<a class="nav-link" href="{% url 'hme' %}">Home</a>
+		</li>
+		<li class="nav-item">
+		<a class="nav-link" href="{% url 'ab' %}">Aboutus</a>
+		</li>
+		<li class="nav-item">
+		<a class="nav-link" href="#">Contactus</a>
+		</li>
+		<li class="nav-item">
+		<a class="nav-link" href="{% url 'rgi' %}">Register</a>
+		</li>
+		</ul>
+		</div>
+		</nav>
+     ```
+   - 10.In navbar for href's just we are using the names of url that should be different from the path
+     - ex:
+     ```python
+        path('',views.home,name="hme")
+     ```
+   - 11.In home.html we need to extend html structure so the home.html consists with minimum number of lines of code
+     - ex:
+     ```home.html```	
+     ```html
+		{% extends 'userapp/header.html' %}
+		{% load static %}
+		{% block title %} Home {% endblock title %}
+		{% block content %}
+		<div class="container">
+		<div class="jumbotron col-md-7" style="margin-top: 50px">
+		<h1>My First Bootstrap Page</h1>
+		<p>This is some text.</p>
+		</div>
+		</div>
+		{% endblock content %}
+     ```
+   - 12.Similarly for the other fiels such as about,contact and etc., those fiels can be used in this format to reduce the number of codes of lines in particular .html
+   instead of accessing all those scripts and navbar links
+     - ex:
+     ```aboutus.html```
+     ```html
+		{% extends 'userapp/header.html' %}
+		{% block title %}About{% endblock title %}
+		{% block content %}
+		<div class="container">
+		<div class="jumbotron" style="margin-top: 50px;">
+		<h1>Welcome to About page</h1>
+		</div>
+		</div>
+		{% endblock content %}
+     ```
