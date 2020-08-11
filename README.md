@@ -116,7 +116,7 @@ _________
 ### Day-5(07-08-2020)
 #### Day-5 content:
 _________
-  - 1.How to create Templates folder and ahow to access the files in templates folder
+  - 1.How to create Templates folder and how to access the files in templates folder
   - 2.Templates folder is created in inner of app in that we are saving all out .html files
   - 3.Useage of render method
      - ex:
@@ -381,7 +381,7 @@ _________
 		</div>
 		{% endblock content %}
      ```
-   - 12.Similarly for the other fiels such as about,contact and etc., those fiels can be used in this format to reduce the number of codes of lines in particular .html
+   - 12.Similarly for the other files such as about,contact and etc., those files can be used in this format to reduce the number of codes of lines in particular .html
    instead of accessing all those scripts and navbar links
      - ex:
      ```aboutus.html```
@@ -396,3 +396,8 @@ _________
 		</div>
 		{% endblock content %}
      ```
+_________
+### Day-8(11-08-2020)
+#### Day-8 content:
+_________
+   - 1.
