@@ -412,8 +412,8 @@ _________
      - ex:
      ```views.py```
      ```python
-        def regist(request):
-		return render(request,'userapp/register.html')
+     def regist(request):
+          return render(request,'userapp/register.html')
      ```
    - 3.In html file the content will be look like as shown below
      - ex:
