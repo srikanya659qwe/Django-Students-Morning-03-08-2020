@@ -1,0 +1,13 @@
+{% extends 'userapp/header.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron col-md-7" style="margin-top: 50px">
+		 <h1>My First Bootstrap Page</h1>
+  		<p>This is some text.</p>
+	</div>
+	<img src="{% static 'images/logo.jpg' %}">
+</div>
+{% endblock content %}
