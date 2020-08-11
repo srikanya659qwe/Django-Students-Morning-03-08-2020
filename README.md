@@ -287,7 +287,7 @@ _________
 #### Day-7 content:
 _________
    - 1.Created another project to implement bootstrap tags and styling to it
-   - 2.Bootstrap brief explanation, configuring in django project styling for it by uisng css and js
+   - 2.Bootstrap brief explanation, configuring in django project styling for it by using css and js
    - 3.Creation of user urls in userapp for creating the path within the app instead of admin urls
    - 4.For creating userapp urls we need to import some statements in admin app i.e., ```include()```
       - ex:
@@ -339,7 +339,8 @@ _________
      ```html
 		{% load static %}
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		<a class="navbar-brand" href="#"><img src="{% static 'images/first.jpg' %}" alt="logo" style="width:40px;"></a>
+		<a class="navbar-brand" href="#">
+	        <img src="{% static 'images/first.jpg' %}" alt="logo" style="width:40px;"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span></button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -400,4 +401,39 @@ _________
 ### Day-8(11-08-2020)
 #### Day-8 content:
 _________
-   - 1.
+   - 1.Created a registration form for that we added url path in urls.py that is in userapp urls, some action in views.py and then that action to be displayed in 
+   registration form
+     - ex:
+     ```urls.py```
+     ```python
+        path('reg/',views.regist,name="rg")
+     ```
+   - 2.In views just rendered to a file that is .html
+     - ex:
+     ```views.py```
+     ```python
+        def regist(request):
+		return render(request,'userapp/register.html')
+     ```
+   - 3.In html file the content will be look like as shown below
+     - ex:
+     ```register.html```
+     ```html
+		{% extends 'userapp/header.html' %}
+		{% block title %}Registration{% endblock title %}
+		{% block content %}
+		<div class="container">
+		<div class="jumbotron col-md-6" style="margin: auto;margin-top:20px;">
+		<h3> Register </h3>
+		<form method="POST" action="#">
+		<input type="text" name="uname" class="form-control col-md-10" placeholder="Enter Username"><br/>
+		<input type="password" name="pwd" class="form-control col-md-10" placeholder="Enter Password"><br/>
+		<input type="submit" class="btn btn-success" value="Submit">
+		</form>
+		</div>
+		</div>
+		{% endblock content %}
+     ```
+   - 4.So to enable a toggler then we need to use jquery for that we nned to downlaod and access in static folder way
+   - 5.Description of Database,migrate and creation of superuser(i.e., Admin) logged into administration page
+     - Useage of Administration page role based access in administration and how to create a users and to give permissions by using superuser(Admin)
