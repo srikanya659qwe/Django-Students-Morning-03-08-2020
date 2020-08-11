@@ -286,19 +286,51 @@ _________
 ### Day-7(10-08-2020)
 #### Day-7 content:
 _________
-      - 1.Created another project to implement bootstrap tags and styling to it
-      - 2.Bootstrap brief explanation, configuring in django project styling for it by uisng css and js
-      - 3.Creation of user urls in userapp for creating the path within the app instead of admin urls
-      - 4.For creating userapp urls we need to import some statements in admin app i.e., ```include()```
-      	- ex:
-	```admin app urls.py```
-	```python
+     - 1.Created another project to implement bootstrap tags and styling to it
+     - 2.Bootstrap brief explanation, configuring in django project styling for it by uisng css and js
+     - 3.Creation of user urls in userapp for creating the path within the app instead of admin urls
+     - 4.For creating userapp urls we need to import some statements in admin app i.e., ```include()```
+      - ex:
+      ```admin app urls.py```
+      ```python
 	from django.urls import path,include
-	```
-      - 5.To include the method we need to set a particular userapp so we need to set it first
-        - ex:
-	```admin urls.py```
-	```python
+      ```
+     - 5.To include the method we need to set a particular userapp so we need to configure it first
+      - ex:
+      ```admin urls.py```
+      ```python
 	path('',include('userappname.urls')),
-	```
-      - 6.
+      ```
+     - 6.Then in userapp we can create our own urls path 
+     - 7.Here we are just creating our own path and functions in views.py so just we are navigating to our .html files
+     - 8.While navigating to .html here it self jusdt we are using dtl language to split scripts,navigation and body content in seperate files
+      - Just we are creating scripts in header.html
+      - ex:
+      ```header.html```
+      ```html
+		{% load static %}
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+		<title>{% block title %}{% endblock title %}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="text/css" href="{% static 'images/first.jpg' %}">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<script type="text/javascript" src="{% static 'jquery/jq.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		</head>
+		<body>
+		{% include 'userapp/navbar.html' %}
+		{% block content %}
+		{% endblock content %}
+		</body>
+		</html>
+      ```
+      - In DTL Language for accessing all the static fiels we need to load those by using ```{% load static %}``` and for title the pages will be different 
+      and the names also to be changed so that we are using ```<title>{% block title %}{% endblock title %}</title>``` It automatically changes the title for each page
+      - For accessing all the navbar link just we are using include to access those links so we had coded in another .html so that should be displayed so we need to acceess
+      all those navbar for all pages so we had implemented in header.html file
+      - To display the contents in body of each page so we are using dtl language ```{% block content %}{% endblock content %}``` within this we need to display all the 
+      content of particular file
+     - 10.
