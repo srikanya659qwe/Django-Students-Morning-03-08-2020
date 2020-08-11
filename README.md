@@ -434,6 +434,6 @@ _________
 		</div>
 		{% endblock content %}
      ```
-   - 4.So to enable a toggler then we need to use jquery for that we nned to downlaod and access in static folder way
+   - 4.So to enable a toggler then we need to use jquery for that we need to download and access in static folder way
    - 5.Description of Database,migrate and creation of superuser(i.e., Admin) logged into administration page
      - Useage of Administration page role based access in administration and how to create a users and to give permissions by using superuser(Admin)
