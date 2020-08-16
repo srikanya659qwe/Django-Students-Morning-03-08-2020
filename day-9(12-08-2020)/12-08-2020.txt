@@ -1,0 +1,135 @@
+Goodmorning to all:
+-------------------
+Day Objectives:
+
+1.Model Creation
+2.ORM(object relational mapping)
+3.Model queries(Django shell)
+
+
+
+
+
+
+
+
+
+
+
+django admin:
+
+->admin can able to create a new user,update existing 
+   user and delete existing user
+
+->for admin we have to create a tables
+    "python manage.py migrate"
+
+-> to access admin part we have to create superuser
+   account
+
+     "python manage.py createsuperuser"
+
+
+
+
+Models:
+->in models.py we will create one or more classes
+->here each and every class represents a db table
+->in this class each field maps a db column
+->to convert class into db table we have two commands
+    1) python manage.py makemigrations
+          ->this command will generate interface file for converting  class to 
+             db table
+    2) python manage.py migrate
+         ->this command will create db tables by using generated 
+            interface file
+
+
+ORM:
+----
+   by using "object" we can access stored data in database
+
+-> in that we can see  
+       1) how to insertion of data
+       2) how to access data
+       3) how to update and delete data
+
+procedure for model queries:
+
+->open cmd from ur project
+->form that location i want to open python shell
+->for that cmd you have to import below command 
+      "python manage.py shell"
+->you have to import your model in django shell
+      "from myApp.models import Emp"
+  
+
+data inserting:
+-------------
+1st way:
+   obj=Emp(name='value',name1='value1')
+   obj.save()
+2nd way:
+   obj=Emp.objects.create(name='value',name1='value1'....)
+   obj
+
+
+
+data accessing:
+---------------
+->if you want to access entire table:
+	obj=classname.objects.all()
+	obj
+
+-> if you want to access only 2 columns
+	obj=classname.objects.values('fn','ln')
+
+->if you want to access specific person data
+        1)get-cant allow duplicates
+            data=classname.objects.get(pk)(id=)
+	2)filter-it returns multiple records
+	    data=classname.objects.filter(name='value')
+->if you want access first record
+            data=classname.objects.first()
+->if you want to acess last record in db
+	data=classname.objects.last() 
+->if you want to retrieve ascending order by first name
+	data=classname.objects.order_by('fname')
+
+->if you want to retrieve descending order by first name
+	data=classname.objects.order_by('-fname')	
+updating:
+---------
+if you want to update specific field in all records
+	info=Emp.objects.all().update(age='45')
+	info
+if you want to update specific person data
+
+       >you have to fetch data from db
+	> then we will update that data
+           info=Emp.objects.get(id=3)
+           info
+           info.lname=''
+           info.save()
+	   info
+
+
+deleting:
+---------
+if you want to delete entire db
+> Emp.objects.all.delete()
+if you want to delete specific person data
+	fetch data from db
+         delete record
+>info=Emp.objects.get(id=3)
+info.delete()
+
+
+
+
+
+
+
+
+
+
